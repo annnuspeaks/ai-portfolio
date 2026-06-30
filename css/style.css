@@ -1,0 +1,1082 @@
+/* =====================================================
+   AI PORTFOLIO
+   Main Stylesheet
+   Part 1
+=====================================================*/
+
+/* ===========================
+        ROOT VARIABLES
+=========================== */
+
+:root {
+  --bg: #0b1020;
+  --bg-soft: #121932;
+
+  --card: rgba(255, 255, 255, 0.06);
+
+  --text: #f5f7ff;
+
+  --muted: #b9c1d9;
+
+  --accent: #7c5cff;
+
+  --accent2: #00d4ff;
+
+  --accent3: #ff4ecd;
+
+  --border: rgba(255, 255, 255, 0.12);
+
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ===========================
+        RESET
+=========================== */
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(124, 92, 255, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(0, 212, 255, 0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(255, 78, 205, 0.12),
+      transparent 25%
+    ),
+    linear-gradient(135deg, #0a0f1f, #0b1020 45%, #121932 100%);
+
+  color: var(--text);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* ===========================
+        TYPOGRAPHY
+=========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+
+  color: #fff;
+
+  margin-bottom: 0.8rem;
+}
+
+p {
+  color: var(--muted);
+
+  line-height: 1.9;
+}
+
+a {
+  text-decoration: none;
+
+  transition: 0.3s;
+
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+
+  display: block;
+}
+
+/* ===========================
+        GLASS
+=========================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar-custom {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background: rgba(11, 16, 32, 0.75);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  color: #fff !important;
+}
+
+.nav-link {
+  position: relative;
+
+  font-weight: 500;
+
+  margin-inline: 0.65rem;
+
+  color: var(--muted) !important;
+
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -5px;
+
+  height: 2px;
+
+  width: 0;
+
+  border-radius: 100px;
+
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent2),
+    var(--accent3)
+  );
+
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ===========================
+        BUTTONS
+=========================== */
+
+.btn-main {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 16px 28px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+
+  border: none;
+}
+
+.btn-solid {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+
+  color: #fff;
+
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.28);
+}
+
+.btn-solid:hover {
+  transform: translateY(-3px);
+
+  color: #fff;
+
+  box-shadow: 0 18px 45px rgba(0, 212, 255, 0.25);
+}
+
+.gradient-border-btn {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    270deg,
+    var(--accent),
+    var(--accent2),
+    var(--accent3),
+    var(--accent)
+  );
+
+  background-size: 300% 300%;
+
+  text-decoration: none;
+}
+
+.gradient-border-btn span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 26px;
+
+  border-radius: 999px;
+
+  background: #0b1020;
+
+  color: #fff;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.gradient-border-btn:hover span {
+  background: #10172c;
+
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   AI PORTFOLIO
+   Main Stylesheet
+   Part 2
+   Hero Section
+=====================================================*/
+
+/* ===========================
+        HERO
+=========================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* padding: 90px 0 60px;
+  position: relative; */
+  overflow: hidden;
+}
+
+.hero-card {
+  padding: 2rem;
+  border-radius: 28px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+
+  margin-bottom: 1.4rem;
+
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+  line-height: 1.05;
+
+  margin-bottom: 1rem;
+
+  color: #fff;
+}
+
+.hero-subtitle {
+  max-width: 680px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+/* ===========================
+        GRADIENT TEXT
+=========================== */
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #a8b6ff, #8ee8ff, #ff9fe6);
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+        PROFILE
+=========================== */
+
+.profile-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.profile-ring {
+  padding: 6px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent2),
+    var(--accent3)
+  );
+
+  box-shadow: 0 0 40px rgba(124, 92, 255, 0.35);
+}
+
+.profile-pic {
+  width: 300px;
+
+  height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 6px solid rgba(255, 255, 255, 0.12);
+
+  background: #111;
+}
+
+/* ===========================
+        HERO STATS
+=========================== */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.stat-box {
+  padding: 1.2rem;
+
+  text-align: center;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.35s;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.stat-box h4 {
+  font-size: 1.7rem;
+
+  font-weight: 700;
+
+  margin-bottom: 0.3rem;
+
+  color: #fff;
+}
+
+.stat-box p {
+  margin: 0;
+
+  font-size: 0.92rem;
+}
+
+/* ===========================
+        SECTION
+=========================== */
+
+section {
+  position: relative;
+
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: #fff;
+
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  max-width: 700px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+   AI PORTFOLIO
+   Main Stylesheet
+   Part 3
+   About • Skills • Experience • Projects
+=====================================================*/
+
+/* ===========================
+        ABOUT
+=========================== */
+
+.about-card,
+.skills-card,
+.experience-card,
+.project-card {
+  border-radius: 26px;
+
+  padding: 1.8rem;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-card:hover,
+.skills-card:hover,
+.experience-card:hover,
+.project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ===========================
+        ICON BOX
+=========================== */
+
+.icon-box {
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 18px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 1rem;
+
+  font-size: 1.4rem;
+
+  color: #fff;
+
+  background: linear-gradient(
+    135deg,
+    rgba(124, 92, 255, 0.22),
+    rgba(0, 212, 255, 0.18)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================
+        PROJECTS
+=========================== */
+
+.project-card {
+  height: 100%;
+}
+
+.project-image {
+  width: 100%;
+
+  aspect-ratio: 16/9;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  margin-bottom: 1.3rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(124, 92, 255, 0.18),
+    rgba(0, 212, 255, 0.12)
+  );
+}
+
+.project-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.project-card h4 {
+  font-size: 1.35rem;
+
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  line-height: 1.85;
+}
+
+.project-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 1.4rem;
+}
+
+/* ===========================
+        PROJECT TAGS
+=========================== */
+
+.project-tag {
+  display: inline-block;
+
+  padding: 0.38rem 0.85rem;
+
+  margin-right: 0.45rem;
+
+  margin-bottom: 0.45rem;
+
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+
+  color: #e8ecff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================
+        STATUS BADGE
+=========================== */
+
+.project-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0.45rem 0.85rem;
+
+  border-radius: 999px;
+
+  background: rgba(0, 212, 255, 0.12);
+
+  color: #8ee8ff;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+}
+
+/* ===========================
+        SKILLS
+=========================== */
+
+.skill-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.skill-item {
+  padding: 1rem 1.1rem;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+
+  transform: translateY(-4px);
+}
+
+.skill-item h5 {
+  margin-bottom: 0.8rem;
+
+  font-size: 1rem;
+}
+
+.skill-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.skill-list li {
+  color: var(--muted);
+
+  padding: 0.35rem 0;
+}
+
+/* ===========================
+        EXPERIENCE
+=========================== */
+
+.timeline {
+  position: relative;
+
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 10px;
+
+  top: 0;
+
+  width: 2px;
+
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.timeline-item {
+  position: relative;
+
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: -27px;
+
+  top: 8px;
+
+  width: 14px;
+
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: var(--accent2);
+
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.timeline-item h5 {
+  margin-bottom: 0.35rem;
+
+  color: #fff;
+}
+
+.timeline-item span {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: #8ee8ff;
+
+  font-size: 0.9rem;
+}
+
+/* ===========================
+        SECTION SPACING
+=========================== */
+
+.section-space {
+  margin-top: 5rem;
+}
+
+/* =====================================================
+   AI PORTFOLIO
+   Main Stylesheet
+   Part 4
+   Resume • Contact • Footer • Utilities
+=====================================================*/
+
+/* ===========================
+        RESUME
+=========================== */
+
+.resume-card {
+  padding: 2.2rem;
+
+  border-radius: 28px;
+
+  text-align: center;
+}
+
+.resume-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 2rem;
+}
+
+/* ===========================
+        CONTACT
+=========================== */
+
+.contact-card {
+  padding: 2rem;
+
+  border-radius: 26px;
+}
+
+.contact-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 2rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  color: #8ee8ff;
+
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.contact-links i {
+  font-size: 1.15rem;
+}
+
+/* ===========================
+        SOCIAL
+=========================== */
+
+.social-icons {
+  display: flex;
+
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  transition: 0.35s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+
+  color: #8ee8ff;
+
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ===========================
+        FOOTER
+=========================== */
+
+footer {
+  margin-top: 70px;
+
+  padding: 35px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+
+  font-weight: 800;
+
+  color: #fff;
+}
+
+.footer-text {
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+/* ===========================
+        UTILITIES
+=========================== */
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent2),
+    var(--accent3)
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.rounded-24 {
+  border-radius: 24px;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow);
+}
+
+.transition {
+  transition: 0.35s;
+}
+
+.hover-up:hover {
+  transform: translateY(-6px);
+}
+
+/* ===========================
+        SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d1b;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+}
+
+/* Firefox */
+
+html {
+  scrollbar-width: thin;
+
+  scrollbar-color: var(--accent2) #090d1b;
+}
+
+/* ===========================
+        HERO FLOATING CARDS
+=========================== */
+
+.hero-floating-card {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border-radius: 16px;
+
+  white-space: nowrap;
+
+  font-size: 0.92rem;
+
+  font-weight: 500;
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.hero-card-top {
+  top: -15px;
+
+  left: -45px;
+}
+
+.hero-card-right {
+  top: 90px;
+
+  right: -70px;
+}
+
+.hero-card-bottom {
+  bottom: 10px;
+
+  right: -35px;
+}
+
+.hero-card-left {
+  bottom: 120px;
+
+  left: -65px;
+}
+
+.hero-floating-card i {
+  font-size: 1.1rem;
+}

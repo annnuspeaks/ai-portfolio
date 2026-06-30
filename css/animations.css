@@ -1,0 +1,285 @@
+/* =====================================================
+   AI PORTFOLIO
+   Animations Stylesheet
+=====================================================*/
+
+/* ===========================
+        KEYFRAMES
+=========================== */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 212, 255, 0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px rgba(0, 212, 255, 0.35),
+      0 0 70px rgba(124, 92, 255, 0.25);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(0, 212, 255, 0.15);
+  }
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+
+    transform: translateX(40px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* ===========================
+        FLOAT
+=========================== */
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===========================
+        FADE
+=========================== */
+
+.fade-up {
+  opacity: 0;
+
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fade-left {
+  opacity: 0;
+
+  animation: fadeLeft 0.9s ease forwards;
+}
+
+.fade-right {
+  opacity: 0;
+
+  animation: fadeRight 0.9s ease forwards;
+}
+
+.zoom-in {
+  opacity: 0;
+
+  animation: zoomIn 0.9s ease forwards;
+}
+
+/* ===========================
+        DELAYS
+=========================== */
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
+.delay-4 {
+  animation-delay: 0.6s;
+}
+
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
+/* ===========================
+        GLOW
+=========================== */
+
+.glow {
+  animation: pulseGlow 3.5s infinite;
+}
+
+/* ===========================
+        GRADIENT
+=========================== */
+
+.gradient-animation {
+  background-size: 300% 300%;
+
+  animation: rotateGradient 7s linear infinite;
+}
+
+/* ===========================
+        CARD HOVER
+=========================== */
+
+.hover-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+}
+
+/* ===========================
+        ICON
+=========================== */
+
+.icon-hover {
+  transition: 0.35s;
+}
+
+.icon-hover:hover {
+  transform: scale(1.12) rotate(6deg);
+}
+
+/* ===========================
+        BUTTON
+=========================== */
+
+.btn-animate {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.btn-animate:hover {
+  transform: translateY(-4px);
+}
+
+/* ===========================
+        IMAGE
+=========================== */
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform 0.6s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.08);
+}
+
+/* ===========================
+        SHIMMER
+=========================== */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+
+  background-size: 200%;
+
+  animation: shimmer 2.4s linear infinite;
+}
