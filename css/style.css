@@ -312,18 +312,30 @@ img {
         HERO
 =========================== */
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  /* padding: 90px 0 60px;
-  position: relative; */
-  overflow: hidden;
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:80px;
+
+    padding-bottom:20px;
+
+    overflow:hidden;
+
 }
 
-.hero-card {
-  padding: 2rem;
-  border-radius: 28px;
+.hero-card{
+
+    padding:2rem;
+
+    border-radius:28px;
+
+    transform:translateY(-65px);
+
 }
 
 .hero-badge {
@@ -396,12 +408,18 @@ img {
         PROFILE
 =========================== */
 
-.profile-wrapper {
-  display: flex;
+.profile-wrapper{
 
-  justify-content: center;
+    display:flex;
+    
+    justify-content:center;
 
-  align-items: center;
+    align-items:center;
+
+    height:100%;
+
+    transform:translateY(-10px);
+
 }
 
 .profile-ring {
@@ -419,18 +437,18 @@ img {
   box-shadow: 0 0 40px rgba(124, 92, 255, 0.35);
 }
 
-.profile-pic {
-  width: 300px;
+.profile-pic{
 
-  height: 300px;
+    width:340px;
 
-  object-fit: cover;
+    height:340px;
 
-  border-radius: 50%;
+    object-fit:cover;
 
-  border: 6px solid rgba(255, 255, 255, 0.12);
+    border-radius:50%;
 
-  background: #111;
+    border:6px solid rgba(255,255,255,.12);
+
 }
 
 /* ===========================
@@ -1060,7 +1078,7 @@ html {
 }
 
 .hero-card-right {
-  top: 90px;
+  top: 70px;
 
   right: -70px;
 }
@@ -1079,4 +1097,32 @@ html {
 
 .hero-floating-card i {
   font-size: 1.1rem;
+}
+
+.profile-name{
+
+    text-align:center;
+
+    margin-top:22px;
+
+}
+
+.profile-name h3{
+
+    margin:0;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+}
+
+.profile-name p{
+
+    margin-top:6px;
+
+    color:var(--accent2);
+
+    font-size:.95rem;
+
 }
