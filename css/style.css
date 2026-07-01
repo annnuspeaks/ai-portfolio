@@ -1161,14 +1161,14 @@ footer {
 }
 
 .pill-pytorch {
-  top: 190px;
-  left: -120px;
+  top: 140px;
+  left: -110px;
   animation-delay: 0.8s;
 }
 
 .pill-aws {
-  bottom: 140px;
-  right: -110px;
+  bottom: 270px;
+  right: -90px;
   animation-delay: 1.2s;
 }
 
