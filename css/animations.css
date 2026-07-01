@@ -131,6 +131,31 @@
   }
 }
 
+@keyframes auroraMove{
+
+0%{
+
+transform:translateX(0)
+translateY(0);
+
+}
+
+50%{
+
+transform:translateX(-40px)
+translateY(30px);
+
+}
+
+100%{
+
+transform:translateX(0)
+translateY(0);
+
+}
+
+}
+
 /* ===========================
         FLOAT
 =========================== */
