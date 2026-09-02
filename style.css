@@ -1,0 +1,70 @@
+/* =========================================
+   AI PORTFOLIO
+   Base Styles
+========================================= */
+
+:root {
+    --bg: #0b0d10;
+    --surface: #12161b;
+    --text: #f5f7fa;
+    --muted: #9aa3ad;
+    --border: #242a31;
+    --accent: #3da9ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+}
+
+#themeToggle,
+#backToTop {
+    position: fixed;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    z-index: 1000;
+}
+
+#themeToggle {
+    bottom: 24px;
+}
+
+#backToTop {
+    bottom: 78px;
+}
