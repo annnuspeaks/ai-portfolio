@@ -1,39 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="Anurag Shukla — AI/ML Developer Portfolio">
+    <meta
+      name="description"
+      content="Anurag Shukla — AI/ML Developer Portfolio"
+    />
 
     <title>Anurag Shukla | AI/ML Developer</title>
 
-    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="#home" class="navbar-brand" aria-label="Anurag Shukla - Home">
+          <img
+            src="assets/images/logo.png"
+            alt="Anurag Shukla"
+            class="navbar-logo"
+          />
+        </a>
 
-    <header id="navbar"></header>
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
     <main>
-        <section id="home"></section>
-        <section id="projects"></section>
-        <section id="gallery"></section>
-        <section id="about"></section>
-        <section id="contact"></section>
+      <section id="home"></section>
+      <section id="projects"></section>
+      <section id="gallery"></section>
+      <section id="about"></section>
+      <section id="contact"></section>
     </main>
 
     <footer id="footer"></footer>
 
-    <button id="themeToggle" aria-label="Toggle theme">
-        ◐
-    </button>
+    <button id="themeToggle" aria-label="Toggle theme">◐</button>
 
-    <button id="backToTop" aria-label="Back to top">
-        ↑
-    </button>
+    <button id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
