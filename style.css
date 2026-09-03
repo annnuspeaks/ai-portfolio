@@ -15,17 +15,6 @@
   --gutter: 24px;
 }
 
-/* ---------- LIGHT THEME ---------- */
-
-[data-theme="light"] {
-  --bg: #f7f9fc;
-  --surface: #ffffff;
-  --text: #111827;
-  --muted: #667085;
-  --border: #e4e7ec;
-  --accent: #1677d2;
-}
-
 /* ---------- RESET ---------- */
 
 *,
@@ -48,9 +37,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
 }
 
 img,
@@ -178,10 +164,52 @@ p {
 
 /* ---------- FLOATING CONTROLS ---------- */
 
-#themeToggle,
+/* =========================================
+   GLOBAL FLOATING CONTROLS
+========================================= */
+
+/* ---------- THEME TOGGLE ---------- */
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- BACK TO TOP ---------- */
+
 #backToTop {
   position: fixed;
+
   right: 20px;
+  bottom: 74px;
 
   width: 44px;
   height: 44px;
@@ -195,15 +223,28 @@ p {
   background: var(--surface);
   color: var(--text);
 
+  cursor: pointer;
+
   z-index: 1000;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-#themeToggle {
-  bottom: 20px;
+#backToTop:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-#backToTop {
-  bottom: 74px;
+#backToTop:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+#backToTop[hidden] {
+  display: none;
 }
 
 /* =========================================
@@ -250,19 +291,11 @@ p {
     width: min(100% - 32px, var(--container));
   }
 
-  #themeToggle,
   #backToTop {
     right: 16px;
     width: 42px;
     height: 42px;
-  }
-
-  #themeToggle {
-    bottom: 16px;
-  }
-
-  #backToTop {
-    bottom: 68px;
+    bottom: 74px;
   }
 }
 
@@ -293,7 +326,7 @@ p {
 ========================================= */
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 72px;
@@ -318,7 +351,7 @@ p {
 }
 
 .navbar-logo {
-  width: 150px;
+  width: 250px;
   height: auto;
 }
 
@@ -427,4 +460,34 @@ p {
   .nav-link.active::after {
     display: none;
   }
+
+  /* Theme stays inside mobile menu */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin: 12px 0 6px;
+  }
+}
+
+#backToTop {
+  bottom: 74px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#backToTop:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+#backToTop:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+#backToTop[hidden] {
+  display: none;
 }
