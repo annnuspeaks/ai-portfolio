@@ -168,41 +168,6 @@ p {
    GLOBAL FLOATING CONTROLS
 ========================================= */
 
-/* ---------- THEME TOGGLE ---------- */
-
-.theme-toggle {
-  width: 44px;
-  height: 44px;
-
-  display: grid;
-  place-items: center;
-
-  flex-shrink: 0;
-
-  border: 1px solid var(--border);
-  border-radius: 50%;
-
-  background: var(--surface);
-  color: var(--text);
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
 /* ---------- BACK TO TOP ---------- */
 
 #backToTop {
@@ -468,26 +433,4 @@ p {
     align-self: center;
     margin: 12px 0 6px;
   }
-}
-
-#backToTop {
-  bottom: 74px;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    border-color 0.2s ease;
-}
-
-#backToTop:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-#backToTop:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-#backToTop[hidden] {
-  display: none;
 }
