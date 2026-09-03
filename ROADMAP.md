@@ -14,6 +14,10 @@
 
 ## 3. Sections
 - [ ] Home — impactful intro + CTAs
+    - [ ] Rich Animated Hero ← CURRENT
+    - [ ] Stats / Highlights
+    - [ ] Featured Projects teaser
+    - [ ] Home polish
 - [ ] Projects — Nexora + 6 projects
 - [ ] Gallery — screenshots + videos
 - [ ] About — professional profile

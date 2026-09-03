@@ -13,6 +13,10 @@
 
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   </head>
 
   <script>
@@ -68,7 +72,192 @@
       </div>
     </header>
     <main>
-      <section id="home"></section>
+      <section id="home" class="hero">
+        <!-- Animated background layers -->
+        <div id="heroVanta" class="hero-vanta" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <!-- Decorative particles -->
+        <div class="hero-particles" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="container hero-inner">
+          <!-- ================= LEFT CONTENT ================= -->
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <span class="eyebrow-dot"></span>
+              AI / MACHINE LEARNING
+            </div>
+
+            <h1>
+              Building
+              <span class="hero-gradient-text">Intelligent</span>
+              Systems for Real-World Problems.
+            </h1>
+
+            <p class="hero-description">
+              I'm Anurag Shukla, an AI/ML developer focused on building
+              practical intelligent systems using Machine Learning, Deep
+              Learning, Generative AI, MLOps and Data Science.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary hero-btn-primary">
+                <span>View Projects</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+
+              <a href="#contact" class="btn hero-btn-secondary">
+                <span>Get In Touch</span>
+              </a>
+            </div>
+
+            <!-- Technology strip -->
+            <div class="hero-tech">
+              <span class="hero-tech-label">FOCUS</span>
+
+              <div class="hero-tech-list">
+                <span>Python</span>
+                <i></i>
+                <span>Machine Learning</span>
+                <i></i>
+                <span>Generative AI</span>
+                <i></i>
+                <span>MLOps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= RIGHT VISUAL ================= -->
+          <div class="hero-visual">
+            <div class="visual-glow visual-glow-one"></div>
+            <div class="visual-glow visual-glow-two"></div>
+
+            <!-- Floating labels -->
+            <div class="floating-chip chip-python">
+              <span class="chip-icon">Py</span>
+              Python
+            </div>
+
+            <div class="floating-chip chip-ai">
+              <span class="chip-icon">AI</span>
+              Intelligent
+            </div>
+
+            <div class="floating-chip chip-ml">
+              <span class="chip-icon">ML</span>
+              Predictive
+            </div>
+
+            <!-- Main glass illustration -->
+            <div class="ai-visual-card">
+              <div class="visual-card-header">
+                <span class="status-dot"></span>
+                <span>AI SYSTEM</span>
+                <span class="visual-card-status">ONLINE</span>
+              </div>
+
+              <div class="ai-illustration">
+                <svg
+                  viewBox="0 0 500 500"
+                  role="img"
+                  aria-label="Abstract artificial intelligence neural network illustration"
+                >
+                  <!-- Outer orbit -->
+                  <circle
+                    class="svg-orbit orbit-one"
+                    cx="250"
+                    cy="250"
+                    r="185"
+                  />
+
+                  <circle
+                    class="svg-orbit orbit-two"
+                    cx="250"
+                    cy="250"
+                    r="145"
+                  />
+
+                  <!-- Neural connections -->
+                  <g class="neural-lines">
+                    <line x1="250" y1="105" x2="155" y2="180" />
+                    <line x1="250" y1="105" x2="345" y2="180" />
+                    <line x1="155" y1="180" x2="125" y2="285" />
+                    <line x1="155" y1="180" x2="250" y2="250" />
+                    <line x1="345" y1="180" x2="375" y2="285" />
+                    <line x1="345" y1="180" x2="250" y2="250" />
+                    <line x1="125" y1="285" x2="185" y2="365" />
+                    <line x1="375" y1="285" x2="315" y2="365" />
+                    <line x1="185" y1="365" x2="250" y2="395" />
+                    <line x1="315" y1="365" x2="250" y2="395" />
+                    <line x1="250" y1="250" x2="185" y2="365" />
+                    <line x1="250" y1="250" x2="315" y2="365" />
+                  </g>
+
+                  <!-- Neural nodes -->
+                  <g class="neural-nodes">
+                    <circle cx="250" cy="105" r="9" />
+                    <circle cx="155" cy="180" r="7" />
+                    <circle cx="345" cy="180" r="7" />
+                    <circle cx="125" cy="285" r="7" />
+                    <circle cx="375" cy="285" r="7" />
+                    <circle cx="185" cy="365" r="7" />
+                    <circle cx="315" cy="365" r="7" />
+                    <circle cx="250" cy="395" r="9" />
+                  </g>
+
+                  <!-- Core -->
+                  <circle class="ai-core-glow" cx="250" cy="250" r="72" />
+
+                  <circle class="ai-core" cx="250" cy="250" r="55" />
+
+                  <!-- AI symbol -->
+                  <text
+                    x="250"
+                    y="267"
+                    text-anchor="middle"
+                    class="ai-core-text"
+                  >
+                    AI
+                  </text>
+
+                  <!-- Core pulse -->
+                  <circle class="core-pulse" cx="250" cy="250" r="72" />
+                </svg>
+              </div>
+
+              <div class="visual-card-footer">
+                <div>
+                  <small>MODEL STATUS</small>
+                  <strong>Learning continuously</strong>
+                </div>
+
+                <div class="signal-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#projects" class="hero-scroll" aria-label="Scroll to projects">
+          <span class="scroll-line"></span>
+          <span>SCROLL TO EXPLORE</span>
+        </a>
+      </section>
       <section id="projects"></section>
       <section id="gallery"></section>
       <section id="about"></section>

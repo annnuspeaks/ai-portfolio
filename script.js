@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initializeNavbar();
   initializeBackToTop();
+  initializeHero();
 });
 
 function initializeNavbar() {
@@ -54,5 +55,49 @@ function initializeBackToTop() {
       top: 0,
       behavior: "smooth",
     });
+  });
+}
+
+function initializeHero() {
+  const hero = document.getElementById("heroVanta");
+
+  if (!hero) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  if (
+    typeof window.VANTA === "undefined" ||
+    typeof window.VANTA.NET === "undefined" ||
+    typeof window.THREE === "undefined"
+  ) {
+    return;
+  }
+
+  window.VANTA.NET({
+    el: hero,
+
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+
+    minHeight: 200,
+    minWidth: 200,
+
+    scale: 1,
+    scaleMobile: 1,
+
+    backgroundColor: 0x0b0d10,
+    color: 0x3da9ff,
+    color2: 0x1d5f91,
+
+    points: 10,
+    maxDistance: 20,
+    spacing: 18,
+
+    showDots: true,
+
+    mouseEase: true,
   });
 }
