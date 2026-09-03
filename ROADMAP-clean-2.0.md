@@ -14,16 +14,25 @@
 
 ## 3. Sections
 
-- [ ] Home — impactful intro + CTAs
+- [x] 3.1 Home — impactful intro + CTAs
   - [x] 3.1.1 Rich Animated Hero
   - [x] 3.1.2 Stats / Highlights
   - [x] 3.1.3 Featured Projects Teaser
-  - [ ] 3.1.4 Home Polish ← CURRENT
-- [ ] Projects — Nexora + 6 projects
-- [ ] Gallery — screenshots + videos
-- [ ] About — professional profile
-- [ ] Contact — phone, email, location + socials
-- [ ] Footer — screenshot-inspired design
+  - [x] 3.1.4 Home Polish ← CURRENT
+- [ ] 3.2 Projects — Nexora + 6 projects
+  - [x] 3.2.1 Projects section structure
+  - [x] 3.2.2 Seven project cards
+  - [x] 3.2.3 Nexora featured treatment
+  - [x] 3.2.4 Project status system
+  - [x] 3.2.5 Responsive grid
+  - [x] 3.2.6 Hover + reveal animations
+  - [x] 3.2.7 Content/link accuracy audit
+  - [x] 3.2.8 Final visual polish
+  - [x] 3.2.9 Desktop/tablet/mobile verification
+- [ ] 3.3 Gallery — screenshots + videos
+- [ ] 3.4 About — professional profile
+- [ ] 3.5 Contact — phone, email, location + socials
+- [ ] 3.6 Footer — screenshot-inspired design
 
 ## 4. Projects
 

@@ -3271,6 +3271,36 @@ p {
   .projects-grid .project-card:last-child {
     grid-column: auto;
   }
+
+  .hero-visual .chip-ai {
+    top: 70%;
+    right: 40px;
+  }
+
+  .hero-visual .chip-ml {
+    bottom: 20%;
+    left: 40px;
+  }
+
+  .hero-visual .chip-python {
+    top: 20%;
+    left: 40px;
+  }
+
+  .telemetry-data {
+    top: 15%;
+    right: 40px;
+    transform-origin: top right;
+  }
+
+  .telemetry-model {
+    top: 40%;
+    bottom: auto;
+    left: 25px;
+    width: 125px;
+    height: 85px;
+    transform-origin: left center;
+  }
 }
 
 @media (max-width: 800px) {
@@ -3285,6 +3315,68 @@ p {
 
   .project-card {
     min-height: 390px;
+  }
+
+  .hero-visual .chip-ai {
+    top: 70%;
+    right: 40px;
+  }
+
+  .hero-visual .chip-ml {
+    bottom: 20%;
+    left: 40px;
+  }
+
+  .hero-visual .chip-python {
+    top: 20%;
+    left: 40px;
+  }
+
+  .telemetry-data {
+    top: 15%;
+    right: 40px;
+    transform-origin: top right;
+  }
+
+  .telemetry-model {
+    top: 40%;
+    bottom: auto;
+    left: 25px;
+    width: 125px;
+    height: 85px;
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual .chip-ai {
+    top: 70%;
+    right: 40px;
+  }
+
+  .hero-visual .chip-ml {
+    bottom: 20%;
+    left: 40px;
+  }
+
+  .hero-visual .chip-python {
+    top: 20%;
+    left: 40px;
+  }
+
+  .telemetry-data {
+    top: 15%;
+    right: 40px;
+    transform-origin: top right;
+  }
+
+  .telemetry-model {
+    top: 40%;
+    bottom: auto;
+    left: 25px;
+    width: 125px;
+    height: 85px;
+    transform-origin: left center;
   }
 }
 
