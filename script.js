@@ -303,7 +303,8 @@ function initializeFeaturedProjects() {
     },
   );
 
-  cards.forEach((card) => {
+  cards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 100}ms`;
     observer.observe(card);
   });
 }

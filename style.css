@@ -10,7 +10,6 @@
   --muted: #9aa3ad;
   --border: #242a31;
   --accent: #3da9ff;
-
   --container: 1180px;
   --gutter: 24px;
 }
@@ -141,16 +140,12 @@ p {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   min-height: 44px;
   padding: 10px 18px;
-
   border: 1px solid var(--border);
   border-radius: 10px;
-
   background: var(--surface);
   color: var(--text);
-
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -162,36 +157,22 @@ p {
   transform: translateY(-1px);
 }
 
-/* ---------- FLOATING CONTROLS ---------- */
-
-/* =========================================
-   GLOBAL FLOATING CONTROLS
-========================================= */
-
 /* ---------- BACK TO TOP ---------- */
 
 #backToTop {
   position: fixed;
-
   right: 30px;
   bottom: 100px;
-
   width: 44px;
   height: 44px;
-
   display: grid;
   place-items: center;
-
   border: 1px solid var(--border);
   border-radius: 50%;
-
   background: var(--surface);
   color: var(--text);
-
   cursor: pointer;
-
   z-index: 1000;
-
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -295,10 +276,8 @@ p {
   top: 0;
   width: 100%;
   height: 72px;
-
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-
   z-index: 900;
 }
 
@@ -328,13 +307,10 @@ p {
 
 .nav-link {
   position: relative;
-
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 600;
-
   padding-block: 8px;
-
   transition: color 0.2s ease;
 }
 
@@ -345,30 +321,23 @@ p {
 
 .nav-link.active::after {
   content: "";
-
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-
   height: 2px;
   border-radius: 2px;
-
   background: var(--accent);
 }
 
 .nav-toggle {
   display: none;
-
   width: 42px;
   height: 42px;
-
   border: 1px solid var(--border);
   border-radius: 9px;
-
   background: var(--surface);
   color: var(--text);
-
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -402,14 +371,11 @@ p {
     top: 64px;
     left: 0;
     right: 0;
-
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-
     padding: 8px var(--gutter);
-
     background: var(--bg);
     border-bottom: 1px solid var(--border);
   }
@@ -695,6 +661,37 @@ p {
   box-shadow: 0 10px 35px rgba(61, 169, 255, 0.18);
 }
 
+.hero-btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+}
+
+.hero-btn-primary:hover::before {
+  left: 140%;
+}
+
+.hero-btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-btn-primary:hover {
   background: transparent;
   color: var(--text);
@@ -769,6 +766,409 @@ p {
   animation: heroVisualIn 1s 0.15s ease both;
 }
 
+/* =========================================
+   HERO VECTOR INTELLIGENCE SCENE
+========================================= */
+
+.hero-vector-scene {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(650px, 115%);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.hero-vector-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---------- ORBITAL RINGS ---------- */
+
+.vector-ring {
+  fill: none;
+  stroke: rgba(61, 169, 255, 0.1);
+  stroke-width: 1;
+  stroke-dasharray: 3 13;
+  transform-origin: center;
+}
+
+.vector-ring-outer {
+  animation: vectorOrbit 30s linear infinite;
+}
+
+.vector-ring-middle {
+  stroke: rgba(118, 87, 255, 0.1);
+  stroke-dasharray: 2 15;
+  animation: vectorOrbitReverse 22s linear infinite;
+}
+
+.vector-ring-inner {
+  stroke: rgba(61, 169, 255, 0.08);
+  stroke-dasharray: 1 10;
+  animation: vectorOrbit 17s linear infinite;
+}
+
+@keyframes vectorOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vectorOrbitReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ---------- CONNECTIONS ---------- */
+
+.vector-neural-lines line {
+  fill: none;
+  stroke: rgba(61, 169, 255, 0.2);
+  stroke-width: 1.4;
+  stroke-dasharray: 4 9;
+  animation: vectorNeuralFlow 3.5s linear infinite;
+}
+
+.vector-neural-lines line:nth-child(even) {
+  animation-delay: -1.5s;
+}
+
+@keyframes vectorNeuralFlow {
+  to {
+    stroke-dashoffset: -26;
+  }
+}
+
+/* ---------- NODES ---------- */
+
+.vector-neural-nodes circle {
+  fill: #3da9ff;
+  filter: drop-shadow(0 0 5px rgba(61, 169, 255, 0.9));
+  animation: vectorNodePulse 2.6s ease-in-out infinite;
+}
+
+.vector-neural-nodes circle:nth-child(2n) {
+  animation-delay: -1.2s;
+}
+
+@keyframes vectorNodePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+/* ---------- CORE ---------- */
+
+.vector-core-halo {
+  fill: rgba(61, 169, 255, 0.035);
+  filter: blur(16px);
+  animation: vectorCoreGlow 3.5s ease-in-out infinite;
+}
+
+.vector-core-ring {
+  fill: none;
+  stroke: rgba(61, 169, 255, 0.4);
+  stroke-width: 1;
+  stroke-dasharray: 8 9;
+  transform-origin: center;
+  animation: vectorCoreRotate 12s linear infinite;
+}
+
+.vector-core {
+  fill: rgba(10, 20, 30, 0.9);
+  stroke: rgba(125, 201, 255, 0.75);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 18px rgba(61, 169, 255, 0.25));
+}
+
+.vector-core-label {
+  fill: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+@keyframes vectorCoreGlow {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes vectorCoreRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- DATA PARTICLES ---------- */
+
+.vector-data-particles circle {
+  fill: #7dc9ff;
+  filter: drop-shadow(0 0 7px rgba(61, 169, 255, 0.8));
+  animation: vectorParticleFloat 4s ease-in-out infinite;
+}
+
+.vector-data-particles circle:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.vector-data-particles circle:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.vector-data-particles circle:nth-child(4) {
+  animation-delay: -3s;
+}
+
+.vector-data-particles circle:nth-child(5) {
+  animation-delay: -1.7s;
+}
+
+.vector-data-particles circle:nth-child(6) {
+  animation-delay: -2.6s;
+}
+
+@keyframes vectorParticleFloat {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================================
+   HERO TELEMETRY GLASS PANELS
+========================================= */
+
+.hero-telemetry {
+  position: absolute;
+  z-index: 5;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.018)
+  );
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.72);
+  animation: telemetryFloat 5s ease-in-out infinite;
+}
+
+@keyframes telemetryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ---------- DATA PANEL ---------- */
+
+.telemetry-data {
+  top: 9%;
+  right: -1%;
+  min-width: 118px;
+}
+
+.telemetry-label {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.34);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.telemetry-data strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ---------- STATUS ---------- */
+
+.telemetry-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.34);
+  font-size: 0.47rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.telemetry-status i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #54e6a1;
+  box-shadow: 0 0 8px rgba(84, 230, 161, 0.75);
+}
+
+/* ---------- MODEL PANEL ---------- */
+
+.telemetry-model {
+  bottom: 8%;
+  left: 0;
+  width: 145px;
+  animation-delay: -2s;
+}
+
+.telemetry-model-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.telemetry-model-row strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* ---------- MINI BARS ---------- */
+
+.telemetry-bars {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 24px;
+}
+
+.telemetry-bars i {
+  width: 3px;
+  border-radius: 3px 3px 0 0;
+  background: rgba(61, 169, 255, 0.7);
+  animation: telemetryBar 1.5s ease-in-out infinite;
+}
+
+.telemetry-bars i:nth-child(1) {
+  height: 8px;
+}
+
+.telemetry-bars i:nth-child(2) {
+  height: 14px;
+  animation-delay: -0.2s;
+}
+
+.telemetry-bars i:nth-child(3) {
+  height: 10px;
+  animation-delay: -0.4s;
+}
+
+.telemetry-bars i:nth-child(4) {
+  height: 18px;
+  animation-delay: -0.6s;
+}
+
+.telemetry-bars i:nth-child(5) {
+  height: 22px;
+  animation-delay: -0.8s;
+}
+
+@keyframes telemetryBar {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- NODE LABEL ---------- */
+
+.telemetry-node {
+  top: 47%;
+  right: -2%;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 12px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 0.48rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  animation-delay: -3s;
+}
+
+.telemetry-node-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow: 0 0 9px rgba(61, 169, 255, 0.9);
+}
+
+/* ---------- SVG NODE ANIMATION STABILITY ---------- */
+
+.vector-neural-nodes circle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-visual .floating-chip {
+  animation-timing-function: ease-in-out;
+}
+
+.hero-visual .chip-python {
+  animation-duration: 6s, 5s;
+}
+
+.hero-visual .chip-ai {
+  animation-duration: 7s, 5.5s;
+}
+
+.hero-visual .chip-ml {
+  animation-duration: 6.5s, 5.2s;
+}
+
 @keyframes heroVisualIn {
   from {
     opacity: 0;
@@ -818,7 +1218,7 @@ p {
 
 .ai-visual-card {
   position: relative;
-  width: min(100%, 500px);
+  width: min(100%, 530px);
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 28px;
   overflow: hidden;
@@ -832,6 +1232,68 @@ p {
   box-shadow:
     0 35px 100px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   AI CARD — MAGIC EDGE POLISH
+========================================= */
+
+.ai-visual-card {
+  isolation: isolate;
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.4),
+    0 0 55px rgba(61, 169, 255, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.ai-visual-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    rgba(61, 169, 255, 0),
+    rgba(61, 169, 255, 0.3),
+    rgba(118, 87, 255, 0.18),
+    rgba(61, 169, 255, 0)
+  );
+  background-size: 220% 220%;
+  opacity: 0;
+  animation: aiCardBorderFlow 5s linear infinite;
+  transition: opacity 0.4s ease;
+}
+
+.ai-visual-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(61, 169, 255, 0.28);
+  box-shadow:
+    0 45px 110px rgba(100, 100, 0, 0.05),
+    0 0 65px rgba(150, 200, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.ai-visual-card:hover::before {
+  opacity: 0.4;
+}
+
+@keyframes aiCardBorderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .visual-card-header {
@@ -1122,10 +1584,15 @@ p {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-decoration: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .hero-scroll:hover {
   color: var(--text);
+  transform: translateX(-50%) translateY(-3px);
 }
 
 .scroll-line {
@@ -1133,6 +1600,56 @@ p {
   height: 1px;
   background: var(--accent);
   opacity: 0.6;
+}
+
+.hero-scroll .scroll-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll .scroll-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--text);
+  animation: scrollLineSweep 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollLineSweep {
+  0% {
+    left: -100%;
+  }
+
+  45%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* =========================================
+   PHASE 3.1.4 — HOME POLISH
+   HERO → CONTENT TRANSITION
+========================================= */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 150px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(11, 13, 16, 0.35) 35%,
+    rgba(11, 13, 16, 0.82) 72%,
+    var(--bg) 100%
+  );
 }
 
 /* =========================================
@@ -1190,6 +1707,24 @@ p {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.2em;
+}
+
+.section-kicker {
+  position: relative;
+  padding-left: 15px;
+}
+
+.section-kicker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(61, 169, 255, 0.65);
+  transform: translateY(-50%);
 }
 
 .highlights-header h2 {
@@ -1385,7 +1920,7 @@ p {
 @media (max-width: 640px) {
   .hero {
     min-height: auto;
-    padding: 70px 0 90px;
+    padding: 76px 0 82px;
   }
 
   .hero-overlay {
@@ -1463,6 +1998,45 @@ p {
   .hero-scroll {
     display: none;
   }
+
+  .hero::after {
+    height: 95px;
+  }
+
+  .hero-content {
+    animation-duration: 0.7s;
+  }
+
+  .hero-visual {
+    animation-duration: 0.8s;
+  }
+
+  .hero-vector-scene {
+    width: 125%;
+    opacity: 0.5;
+  }
+
+  .hero-telemetry {
+    transform: scale(0.82);
+  }
+
+  .telemetry-data {
+    top: 3%;
+    right: -2%;
+  }
+
+  .telemetry-model {
+    bottom: 3%;
+    left: -3%;
+  }
+
+  .telemetry-node {
+    display: none;
+  }
+
+  .ai-visual-card {
+    width: min(100%, 460px);
+  }
 }
 
 /* =========================================
@@ -1481,6 +2055,18 @@ p {
   .core-pulse,
   .signal-bars span,
   .floating-chip,
+  .hero-scroll .scroll-line::after,
+  .hero-vector-scene *,
+  .hero-telemetry,
+  .hero-telemetry::before,
+  .ai-visual-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
+  .hero-btn-primary::before {
+    animation: none !important;
+    transition: none !important;
+  }
   .visual-glow {
     animation: none !important;
   }
@@ -2228,13 +2814,10 @@ p {
   inset: 0;
   pointer-events: none;
   opacity: 0.16;
-
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-
   background-size: 72px 72px;
-
   mask-image: linear-gradient(
     to bottom,
     transparent,
@@ -2249,13 +2832,10 @@ p {
 .projects-header {
   position: relative;
   z-index: 1;
-
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
-
   align-items: end;
   gap: 60px;
-
   margin-bottom: 50px;
 }
 
@@ -2267,9 +2847,7 @@ p {
 
 .projects-header h2 span {
   color: transparent;
-
   background: linear-gradient(100deg, #ffffff, #7dc9ff, #3da9ff);
-
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -2277,7 +2855,6 @@ p {
 .projects-header p {
   max-width: 420px;
   margin: 0;
-
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -2287,10 +2864,8 @@ p {
 .projects-grid {
   position: relative;
   z-index: 1;
-
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   gap: 16px;
 }
 
@@ -2303,35 +2878,25 @@ p {
 
 .project-card {
   position: relative;
-
   min-height: 410px;
-
   display: flex;
   flex-direction: column;
-
   padding: 24px;
-
   overflow: hidden;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
-
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.055),
     rgba(255, 255, 255, 0.012)
   );
-
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.045),
     0 22px 70px rgba(0, 0, 0, 0.2);
-
   opacity: 0;
   transform: translateY(25px);
-
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
@@ -2346,9 +2911,7 @@ p {
 
 .project-card:hover {
   transform: translateY(-7px);
-
   border-color: rgba(61, 169, 255, 0.3);
-
   background: linear-gradient(
     145deg,
     rgba(61, 169, 255, 0.065),
@@ -2368,16 +2931,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-bottom: 32px;
 }
 
 .project-number {
   color: rgba(255, 255, 255, 0.24);
-
   font-size: 0.62rem;
   font-weight: 700;
-
   letter-spacing: 0.15em;
 }
 
@@ -2387,24 +2947,18 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-
   padding: 7px 10px;
-
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 999px;
-
   background: rgba(0, 0, 0, 0.18);
-
   font-size: 0.56rem;
   font-weight: 800;
-
   letter-spacing: 0.08em;
 }
 
 .project-status span {
   width: 6px;
   height: 6px;
-
   border-radius: 50%;
 }
 
@@ -2415,7 +2969,6 @@ p {
 .project-status.live span {
   background: #54e6a1;
   box-shadow: 0 0 10px rgba(84, 230, 161, 0.8);
-
   animation: projectStatusPulse 2s ease-in-out infinite;
 }
 
@@ -2433,32 +2986,23 @@ p {
 .project-card-icon {
   width: 66px;
   height: 66px;
-
   display: grid;
   place-items: center;
-
   margin-bottom: 25px;
-
   border: 1px solid rgba(61, 169, 255, 0.2);
   border-radius: 18px;
-
   background: radial-gradient(
     circle,
     rgba(61, 169, 255, 0.13),
     rgba(61, 169, 255, 0.025)
   );
-
   color: var(--accent);
-
   font-size: 0.9rem;
   font-weight: 800;
-
   letter-spacing: -0.03em;
-
   box-shadow:
     0 0 35px rgba(61, 169, 255, 0.06),
     inset 0 0 20px rgba(61, 169, 255, 0.035);
-
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -2466,7 +3010,6 @@ p {
 
 .project-card:hover .project-card-icon {
   transform: translateY(-3px) rotate(-3deg);
-
   box-shadow:
     0 0 45px rgba(61, 169, 255, 0.13),
     inset 0 0 25px rgba(61, 169, 255, 0.05);
@@ -2514,12 +3057,9 @@ p {
 
 .project-category {
   margin-bottom: 9px;
-
   color: rgba(255, 255, 255, 0.32);
-
   font-size: 0.57rem;
   font-weight: 800;
-
   letter-spacing: 0.14em;
 }
 
@@ -2527,10 +3067,8 @@ p {
 
 .project-card h3 {
   color: var(--text);
-
   font-size: 1.55rem;
   line-height: 1.05;
-
   letter-spacing: -0.04em;
 }
 
@@ -2538,9 +3076,7 @@ p {
 
 .project-card p {
   margin-top: 14px;
-
   color: var(--muted);
-
   font-size: 0.76rem;
   line-height: 1.75;
 }
@@ -2550,22 +3086,16 @@ p {
 .project-tech-list {
   display: flex;
   flex-wrap: wrap;
-
   gap: 7px;
-
   margin-top: 20px;
 }
 
 .project-tech-list span {
   padding: 6px 9px;
-
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 7px;
-
   background: rgba(255, 255, 255, 0.022);
-
   color: rgba(255, 255, 255, 0.4);
-
   font-size: 0.53rem;
   font-weight: 600;
 }
@@ -2576,19 +3106,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 12px;
-
   margin-top: auto;
   padding-top: 18px;
-
   border-top: 1px solid rgba(255, 255, 255, 0.065);
-
   color: var(--accent);
-
   font-size: 0.64rem;
   font-weight: 700;
-
   transition:
     color 0.2s ease,
     padding-inline 0.2s ease;
@@ -2605,6 +3129,80 @@ p {
 
 .project-action-disabled:hover {
   color: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- HOME SECTION CONTINUITY ---------- */
+
+.highlights {
+  position: relative;
+}
+
+.highlights::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(760px, 70%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(61, 169, 255, 0.22),
+    transparent
+  );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.featured-projects {
+  position: relative;
+}
+
+.featured-projects::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(760px, 70%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(61, 169, 255, 0.16),
+    transparent
+  );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* =========================================
+   HERO POLISH — FLOATING ELEMENT SPACING
+========================================= */
+
+/* Remove the redundant neural-node HUD label.
+   The neural network itself already communicates this. */
+.telemetry-node {
+  display: none !important;
+}
+
+/* Keep the AI chip visually attached to the upper-right
+   side of the neural system without colliding with the card. */
+.hero-visual .chip-ai {
+  top: 61%;
+  right: -1%;
+}
+
+/* ---------- MODEL / ML SEPARATION ---------- */
+
+.hero-visual .chip-ml {
+  bottom: 18%;
+  left: -1%;
+}
+
+.telemetry-model {
+  bottom: 45%;
+  left: -8%;
+  width: 145px;
 }
 
 /* ---------- ANIMATION ---------- */
@@ -2650,6 +3248,16 @@ p {
 }
 
 @media (max-width: 640px) {
+  .navbar-logo {
+    width: 250px;
+    height: auto;
+  }
+
+  .project-status.coming-soon {
+    padding: 6px 9px;
+    font-size: 0.5rem;
+  }
+
   .projects-section {
     padding-block: 80px 90px;
   }
@@ -2662,6 +3270,117 @@ p {
   .project-card-icon {
     width: 58px;
     height: 58px;
+  }
+
+  .hero-visual .chip-ai {
+    top: 70%;
+    right: 10px;
+  }
+
+  .hero-visual .chip-ml {
+    bottom: 20%;
+    left: 10px;
+  }
+
+  .hero-visual .chip-python {
+    top: 20%;
+    left: 10px;
+  }
+
+  .hero-telemetry {
+    transform: scale(0.72);
+  }
+
+  .telemetry-data {
+    top: 15%;
+    right: 10px;
+    transform-origin: top right;
+  }
+
+  .telemetry-model {
+    top: 40%;
+    bottom: auto;
+    left: 5px;
+    width: 125px;
+    height: 85px;
+    transform-origin: left center;
+  }
+
+  .hero-vector-scene {
+    width: 125%;
+    opacity: 0.42;
+  }
+
+  /* ---------- BUILT WITH PURPOSE ---------- */
+
+  .highlights {
+    padding-block: 72px 82px;
+  }
+
+  .highlights-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 18px;
+    margin-bottom: 34px;
+  }
+
+  .highlights-header h2 {
+    max-width: 330px;
+    font-size: clamp(2.25rem, 10vw, 3rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  }
+
+  .highlights-header p {
+    max-width: 100%;
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  /* Proper 2 × 2 mobile card layout */
+  .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .highlight-card {
+    min-height: 235px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .highlight-topline {
+    margin-bottom: 24px;
+  }
+
+  .highlight-value {
+    min-height: 50px;
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+
+  .highlight-label {
+    margin-top: 10px;
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .highlight-detail {
+    padding-top: 8px;
+    font-size: 0.61rem;
+    line-height: 1.45;
+  }
+
+  /* ---------- BACK TO TOP ---------- */
+
+  /*
+     ChatSupport sits near the bottom-right on mobile.
+     Move Back-to-Top higher so the two never collide.
+  */
+  #backToTop {
+    right: 30px;
+    bottom: 100px;
+    width: 40px;
+    height: 40px;
   }
 }
 
