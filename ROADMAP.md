@@ -1,22 +1,22 @@
 # AI Portfolio — Roadmap
 
 ## 1. Foundation
-- [ ] Clean HTML/CSS/JS setup
-- [ ] Logo + favicon
-- [ ] Responsive base
-- [ ] Dark/Light theme
+- [x] Clean HTML/CSS/JS setup
+- [x] Logo + favicon
+- [x] Responsive base
+- [x] Dark/Light theme
 
 ## 2. Global UI
-- [ ] Navbar: Home · Projects · Gallery · About · Contact
-- [ ] Theme toggle
-- [ ] Back to top
-- [ ] Chat support integration
+- [x] Navbar: Home · Projects · Gallery · About · Contact
+- [x] Theme toggle
+- [x] Back to top
+- [x] Chat support integration
 
 ## 3. Sections
-- [ ] Home — impactful intro + CTAs
-    - [ ] Rich Animated Hero ← CURRENT
-    - [ ] Stats / Highlights
-    - [ ] Featured Projects teaser
+- [x] Home — impactful intro + CTAs
+    - [x] Rich Animated Hero ← CURRENT
+    - [x] Stats / Highlights
+    - [x] Featured Projects teaser
     - [ ] Home polish
 - [ ] Projects — Nexora + 6 projects
 - [ ] Gallery — screenshots + videos
