@@ -79,31 +79,39 @@ function initializeHero() {
     return;
   }
 
-  window.VANTA.NET({
-    el: hero,
+  const initVanta = () => {
+    window.VANTA.NET({
+      el: hero,
 
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
 
-    minHeight: 200,
-    minWidth: 200,
+      minHeight: 200,
+      minWidth: 200,
 
-    scale: 1,
-    scaleMobile: 1,
+      scale: 1,
+      scaleMobile: 1,
 
-    backgroundColor: 0x0b0d10,
-    color: 0x3da9ff,
-    color2: 0x1d5f91,
+      backgroundColor: 0x0b0d10,
+      color: 0x3da9ff,
+      color2: 0x1d5f91,
 
-    points: 10,
-    maxDistance: 20,
-    spacing: 18,
+      points: 10,
+      maxDistance: 20,
+      spacing: 18,
 
-    showDots: true,
+      showDots: true,
 
-    mouseEase: true,
-  });
+      mouseEase: true,
+    });
+  };
+
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(initVanta, { timeout: 1200 });
+  } else {
+    window.setTimeout(initVanta, 250);
+  }
 }
 
 function initializeHighlights() {
@@ -273,27 +281,18 @@ function initializeGallery() {
     }
 
     const showSlide = (index) => {
-      currentIndex =
-        (index + slides.length) % slides.length;
+      currentIndex = (index + slides.length) % slides.length;
 
       slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle(
-          "is-active",
-          slideIndex === currentIndex,
-        );
+        slide.classList.toggle("is-active", slideIndex === currentIndex);
       });
 
       dots.forEach((dot, dotIndex) => {
-        dot.classList.toggle(
-          "is-active",
-          dotIndex === currentIndex,
-        );
+        dot.classList.toggle("is-active", dotIndex === currentIndex);
       });
 
       if (currentCounter) {
-        currentCounter.textContent = String(
-          currentIndex + 1,
-        ).padStart(2, "0");
+        currentCounter.textContent = String(currentIndex + 1).padStart(2, "0");
       }
     };
 
@@ -313,7 +312,7 @@ function initializeGallery() {
     };
 
     const startAutoSlide = () => {
-      if (reduceMotion || slides.length <= 1) return;
+      if (reduceMotion || slides.length <= 1 || isHovered) return;
 
       stopAutoSlide();
 
@@ -347,21 +346,37 @@ function initializeGallery() {
 
     slideshow?.addEventListener("mouseenter", () => {
       isHovered = true;
+      stopAutoSlide();
     });
 
     slideshow?.addEventListener("mouseleave", () => {
       isHovered = false;
+      startAutoSlide();
     });
 
     slideshow?.addEventListener("focusin", () => {
       isHovered = true;
+      stopAutoSlide();
     });
 
     slideshow?.addEventListener("focusout", () => {
       isHovered = false;
+      startAutoSlide();
     });
 
     showSlide(0);
-    startAutoSlide();
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    visibilityObserver.observe(gallery);
   });
 }
