@@ -31,29 +31,29 @@
   - [x] 3.2.8 Final visual polish
   - [x] 3.2.9 Desktop/tablet/mobile verification
 
-  - [ ] 3.3 Gallery — screenshots + videos
+  - [x] 3.3 Gallery — screenshots + videos
     - [x] 3.3.1 Gallery section structure
     - [x] 3.3.2 Project gallery cards
     - [x] 3.3.3 Project placeholder visuals
     - [x] 3.3.4 Screenshot presentation
     - [x] 3.3.5 Hover + interaction animations
-    - [ ] 3.3.6 Responsive gallery
-    - [ ] 3.3.7 Content / project mapping audit
-    - [ ] 3.3.8 Final visual polish
-    - [ ] 3.3.9 Desktop/tablet/mobile verification
-- [ ] 3.4 About — professional profile
-- [ ] 3.5 Contact — phone, email, location + socials
-- [ ] 3.6 Footer — screenshot-inspired design
+    - [x] 3.3.6 Responsive gallery
+    - [x] 3.3.7 Content / project mapping audit
+    - [x] 3.3.8 Final visual polish
+    - [x] 3.3.9 Desktop/tablet/mobile verification
+- [x] 3.4 About — professional profile
+- [x] 3.5 Contact — phone, email, location + socials
+- [x] 3.6 Footer — screenshot-inspired design
 
 ## 4. Projects
 
-- [ ] FraudMatrix — Live: https://fraudmatrix.vercel.app/
-- [ ] ChurnMatrix — Live: https://churnmatrix.vercel.app/
-- [ ] Nexora — Coming Soon
-- [ ] MLOps Pipeline — Coming Soon
-- [ ] RAG AI Assistant — Coming Soon
-- [ ] Recommendation System — Coming Soon
-- [ ] Time-Series Forecasting — Coming Soon
+- [x] FraudMatrix — Live: https://fraudmatrix.vercel.app/
+- [x] ChurnMatrix — Live: https://churnmatrix.vercel.app/
+- [x] Nexora — Coming Soon
+- [x] MLOps Pipeline — Coming Soon
+- [x] RAG AI Assistant — Coming Soon
+- [x] Recommendation System — Coming Soon
+- [x] Time-Series Forecasting — Coming Soon
 
 ## 5. Final
 

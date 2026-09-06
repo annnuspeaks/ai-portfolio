@@ -4683,6 +4683,380 @@ p {
     justify-content: flex-start;
   }
 }
+/* =========================================
+   PHASE 3.6 — NEXORA-STYLE FOOTER
+========================================= */
+
+.site-footer {
+  position: relative;
+  padding: 76px 0 24px;
+  background: #080a0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: 15%;
+  width: 520px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(61, 169, 255, 0.045);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* ---------- MAIN GRID ---------- */
+
+.footer-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1.55fr)
+    minmax(130px, 0.7fr)
+    minmax(220px, 1.2fr)
+    minmax(190px, 0.9fr);
+
+  gap: 70px;
+  padding-bottom: 58px;
+}
+
+/* ---------- BRAND ---------- */
+
+.footer-brand-column {
+  max-width: 330px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-brand img {
+  width: 250px;
+  height: auto;
+}
+
+.footer-description {
+  max-width: 310px;
+  margin-top: 28px;
+
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.78rem;
+  line-height: 1.9;
+}
+
+/* ---------- COLUMNS ---------- */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin: 0 0 20px;
+
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.footer-column > a {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 30px;
+
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.72rem;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-column > a:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* ---------- PROJECT LINKS ---------- */
+
+.footer-projects > a {
+  gap: 7px;
+}
+
+.footer-projects > a span {
+  color: var(--accent);
+  font-size: 0.62rem;
+  opacity: 0;
+  transform: translateX(-3px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-projects > a:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- CONNECT ---------- */
+
+.footer-connect {
+  gap: 0;
+}
+
+.footer-contact-link,
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 30px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+}
+
+.footer-contact-link:hover {
+  color: var(--accent);
+}
+
+.footer-contact-icon {
+  width: 18px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ---------- SOCIALS ---------- */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.015);
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--accent);
+  border-color: rgba(61, 169, 255, 0.45);
+  background: rgba(61, 169, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ---------- BOTTOM BAR ---------- */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.065);
+
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.62rem;
+}
+
+.footer-stack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  letter-spacing: 0.14em;
+}
+
+.footer-stack i {
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.footer-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  transition: color 0.2s ease;
+}
+
+.footer-back span {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.footer-back:hover {
+  color: var(--text);
+}
+
+/* =========================================
+   FOOTER — TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .footer-grid {
+    grid-template-columns:
+      minmax(230px, 1.4fr)
+      minmax(130px, 0.7fr)
+      minmax(190px, 1fr);
+
+    gap: 45px;
+  }
+
+  .footer-connect {
+    grid-column: 3;
+  }
+}
+
+/* =========================================
+   FOOTER — MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 60px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 28px;
+    padding-bottom: 42px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+    max-width: 420px;
+  }
+
+  .footer-brand img {
+    width: 210px;
+  }
+
+  .footer-description {
+    max-width: 390px;
+    margin-top: 20px;
+  }
+
+  .footer-connect {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   FOOTER — SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 52px 0 22px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-brand-column {
+    grid-column: auto;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-brand img {
+    width: 190px;
+  }
+
+  .footer-description {
+    font-size: 0.74rem;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 14px;
+  }
+
+  .footer-column > a,
+  .footer-contact-link,
+  .footer-location {
+    min-height: 34px;
+    font-size: 0.74rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 13px;
+  }
+}
+
+.footer-social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-column > a,
+  .footer-projects > a span,
+  .footer-socials a,
+  .footer-back {
+    transition: none;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .contact-item,
